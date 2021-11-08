@@ -13,10 +13,10 @@ export class HttpErrorsInterceptor implements HttpInterceptor {
     ): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
             catchError(err => {
-                console.log(err);
+                console.error(err);
                 return observableThrowError(err);
             })
         )
     }
-    
+
 }
